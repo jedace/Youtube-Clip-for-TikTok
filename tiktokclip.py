@@ -8,7 +8,7 @@ video_url = input("Enter the URL of the YouTube video: ")
 yt = YouTube(video_url)
 video = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download()
 
-# Cut the video into 61-second long clips
+# Cut the video into x-second long clips, where i = clip length
 video_clip = VideoFileClip(video)
 duration = video_clip.duration
 
